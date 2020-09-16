@@ -1,0 +1,13 @@
+@import "_general.css";
+@import "header.css";
+@import "footer.css";
+@import "banner.css";
+@import "news.css";
+@import "viewed.css";
+@import "article.css";
+@import "pagination.css";
+@import "profile.css";
+@import "sorting.css";
+@import "form.css";
+@import "comments.css";
+@import "layout.css";

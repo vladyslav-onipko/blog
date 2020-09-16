@@ -1,0 +1,39 @@
+.viewed {
+    background: #F2F2F2;
+    padding: 50px 0;
+}
+
+.viewed__title {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 20px;
+}
+
+.viewed__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.viewed__item {
+    margin: 0 15px;
+    width: calc(100% / 3 - 30px);
+}
+
+.viewed__image {
+    max-height: 200px;
+}
+
+.viewed__content {
+    background: #fff;
+    padding: 20px;
+}
+
+.viewed__caption a {
+    color: #2F2E2E;
+    font-size: 17px;
+}
+
+.viewed__caption a:hover {
+    color: #2E7C84;
+}

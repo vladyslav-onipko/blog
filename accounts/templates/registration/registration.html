@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %} Registration {% endblock %}
+{% load static %}
+{% block content %}
+    <section class="layout">
+        <div class="container">
+            <h2 class="title">Registration</h2>
+            <div class="layout__form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.errors }}
+                    <div class="layout__item">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.password1.label_tag }}
+                        {{ form.password1 }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                        <p id="error-email"></p>
+                    </div>
+                    <div class="layout__submit">
+                        <button id="btn" type="submit" class="submit">Registration</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{#{% block script %}#}
+{#    <script type="text/javascript" src="{% static 'js/email_validate.js' %}"></script>#}
+{#{% endblock %}#}

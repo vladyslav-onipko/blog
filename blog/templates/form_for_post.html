@@ -1,0 +1,35 @@
+<section class="layout">
+    <div class="container -lg">
+        <h1 class="title">Publish article</h1>
+        <div class="layout__form">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.errors }}
+                <div class="layout__item">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="layout__item">
+                    {{ form.rubric.label_tag }}
+                    {{ form.rubric }}
+                </div>
+                <div class="layout__item">
+                    {{ form.content.label_tag }}
+                    {{ form.content|safe }}
+                </div>
+                <div class="layout__item">
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
+                </div>
+                <div class="layout__item">
+                    {{ form.tags.label_tag }}
+                    {{ form.tags }}
+                </div>
+                <div class="layout__submit">
+                    <button type="submit" class="submit">Publish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

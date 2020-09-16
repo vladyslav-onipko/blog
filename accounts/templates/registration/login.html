@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <section class="layout">
+        <div class="container">
+            <h1 class="title">Authorization</h1>
+            <div class="layout__form">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="layout__item">
+                        {{ form.username.label_tag }}
+                        {{ form.username }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.password.label_tag }}
+                        {{ form.password }}
+                    </div>
+                    <div class="layout__submit">
+                        <button type="submit" class="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Edit profile {% endblock %}
+{% block content %}
+    <section class="layout">
+        <div class="container">
+            <h1 class="title">Edit profile</h1>
+            <div class="layout__form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="layout__item">
+                        {{ form.full_name.label_tag }}
+                        {{ form.full_name }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.birthday.label_tag }}
+                        {{ form.birthday }}
+                    </div>
+                    <div class="layout__item">
+                        {{ form.photo.label_tag }}
+                        {{ form.photo }}
+                    </div>
+                    <div class="layout__submit">
+                        <button type="submit" class="submit">Edit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}

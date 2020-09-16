@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Home page {% endblock %}
+{% load static %}
+
+{% block content %}
+    <section class="banner" style="background-image: url({% static 'images/banner.jpg' %})">
+        <div class="container">
+            <div class="banner__wrapper">
+                <h1 class="banner__title">World News</h1>
+            </div>
+        </div>
+    </section>
+    <div class="sorting">
+        <div class="container">
+            <div class="sorting__wrapper">
+                <form class="filter" method="get">
+                    {{ filter_form.form }}
+                </form>
+                <form class="search" method="get">
+                    {{ search_form.search }}
+                    <button class="search-submit" type="submit">
+                        <span class="fas fa-search"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'all_posts.html' %}
+{% endblock %}

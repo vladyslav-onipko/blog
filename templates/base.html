@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %} News site {% endblock %}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="site-main">
+        {% block header %}
+           {% include "./partials/header.html" %}
+        {% endblock %}
+
+        {% block content %} {% endblock %}
+
+        {% block pagination %}
+            {% include './partials/pagination.html' %}
+        {% endblock %}
+    </div>
+
+        {% block viewed %}
+            {% include './partials/viewed.html' %}
+        {% endblock %}
+
+    {% block footer %}
+       {% include "./partials/footer.html" %}
+    {% endblock %}
+
+    <script src="{% static 'js/main.js' %}"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

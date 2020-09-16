@@ -1,0 +1,44 @@
+.comments {
+    margin: 50px 0;
+}
+
+.comments form {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments__block {
+    margin-top: 20px;
+}
+
+.comments__item {
+    border-top: 1px solid;
+    padding: 20px;
+}
+
+.comments__name {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+.comments__content,
+.login {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.comments__date {
+    color: #2F2E2E;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.login_link {
+    color: #2F2E2E;
+}
+
+.login_link:hover {
+    color: #2E7C84;
+}

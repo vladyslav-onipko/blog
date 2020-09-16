@@ -1,0 +1,42 @@
+{% load static %}
+{% if posts %}
+    <section class="news">
+        <div class="container">
+            <h2>News</h2>
+            <div class="news__wrapper">
+                {% for post in posts %}
+                    <article class="news__item">
+                        <picture class="news__image img">
+                            {% if not post.image %}
+                                <img src="https://image.freepik.com/free-vector/news-concept-landing-page_52683-20167.jpg" alt="">
+                            {% else %}
+                                <img src="{{ post.image.url }}" alt="">
+                            {% endif %}
+                        </picture>
+                        <div class="news__content">
+                            <p class="news__name">{{ post.user.username }}</p>
+                            <p class="news__publication">{{ post.pub_date }}</p>
+                            <h3 class="news__title">
+                                <a href="{% url 'post-detail' post.slug %}">{{ post.title }}</a>
+                            </h3>
+                            <div class="news__description">
+                                {{ post.content|safe }}
+                            </div>
+                            <div class="news__bottom">
+                                <p class="news__views">Views: {{ post.views }}</p>
+                                <a href="{% url 'post-detail' post.slug %}" class="news__comment">Comment</a>
+                                <div class="news__tags">
+                                    {% for tag in post.tags.all %}
+                                        <a class="tag" href="{% url 'posts-tagged' tag.slug %}">#{{ tag }}</a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% else %}
+    <p>Sorry, no articles found &#128543</p>
+{% endif %}

@@ -1,0 +1,9 @@
+.sorting {
+    margin: 20px 0 0;
+}
+
+.sorting__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}

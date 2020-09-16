@@ -1,0 +1,25 @@
+{% if viewed %}
+    <section class="viewed">
+        <div class="container">
+            <h2 class="viewed__title">Viewed</h2>
+            <div class="viewed__wrapper">
+                {% for post in viewed %}
+                    <article class="viewed__item">
+                        <picture class="viewed__image img">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="">
+                            {% else %}
+                                <img src="https://image.freepik.com/free-vector/news-concept-landing-page_52683-20167.jpg" alt="">
+                            {% endif %}
+                        </picture>
+                        <div class="viewed__content">
+                            <h3 class="viewed__caption">
+                                <a href="{% url 'post-detail' post.slug %}">{{ post.title }}</a>
+                            </h3>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,17 @@
+{% if paginator %}
+    <div class="pagination">
+        <div class="container">
+            <div class="pagination__links">
+                {% if page_obj.has_previous %}
+                    <div class="pagination__item prev"><a class="pagination__page" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">Previous</a></div>
+                    <div class="pagination__item"><a class="pagination__link" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></div>
+                {% endif %}
+                <div class="pagination__item"><a class="pagination__link active" href="{{ request.path }}?page={{ page_obj.number }}">{{ page_obj.number }}</a></div>
+                {% if page_obj.has_next %}
+                    <div class="pagination__item"><a class="pagination__link" href="{{ request.path }}?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></div>
+                    <div class="pagination__item next"><a class="pagination__page" href="{{ request.path }}?page={{ page_obj.next_page_number }}">Next</a></div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

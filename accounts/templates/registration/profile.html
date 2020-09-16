@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} {{ user.username }} {% endblock %}
+{% block content %}
+    <section class="profile">
+        <div class="container">
+            <h2 class="profile__title title">Profile: {{ profile.user }}</h2>
+            <div class="profile__wrapper">
+                <div class="profile__img">
+                    {% if not profile.photo %}
+                        <img src="https://anotherjavaduke.files.wordpress.com/2018/08/avataaars-2.png" alt="">
+                    {% else %}
+                        <img src="{{ profile.photo.url }}" alt="">
+                    {% endif %}
+                </div>
+                <div class="profile__info">
+                    <div class="profile__block">
+                        <h3 class="profile__caption">Contact information</h3>
+                        <p><strong>Email: </strong>{{ profile.user.email }}</p>
+                    </div>
+                    <div class="profile__block"></div>
+                    <div class="profile__block">
+                        <h3 class="profile__caption">General information</h3>
+                        <p><strong>User name: </strong> {{ profile.user }}</p>
+                        {% if profile.full_name%}
+                            <p><strong>Name: </strong>{{ profile.full_name }}</p>
+                        {% endif %}
+                        {% if profile.birthday %}
+                            <p><strong>Birthday: </strong> {{ profile.birthday }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="profile__actions">
+                    <h3 class="profile__caption">Actions</h3>
+                    <ul class="profile__list">
+                        <li class="profile__item">
+                             <a class="profile__link" href="{% url 'profile-edit' profile.slug %}">
+                                 <span class="far fa-pencil profile__icon"></span>Edit profile</a>
+                        </li>
+                        <li class="profile__item">
+                             <a class="profile__link" href="{% url 'user-posts' %}">
+                                 <span class="fas fa-bars profile__icon"></span>Your publications</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

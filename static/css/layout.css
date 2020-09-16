@@ -1,0 +1,25 @@
+.layout {
+    margin: 50px 0 70px;
+}
+
+.layout .container {
+    max-width: 400px;
+}
+
+.layout .container.-lg {
+    max-width: 620px;
+}
+
+.layout__item {
+    margin: 0 0 20px;
+}
+
+.layout__submit {
+    text-align: right;
+}
+
+.layout__buttons {
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
